@@ -1,0 +1,222 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow: hidden;
+    scroll-behavior: initial;
+    
+}
+
+html{
+    height: 100vh;
+    width: 100%;
+    
+    
+}
+.main{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    left: 150px;
+    
+}
+
+#Table{
+    width: 65%;
+    height: 60%;
+}
+/* .nav{
+    background-color: rgb(182, 175, 175);
+    height: 100vh;
+    width: 16%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.nav h1{
+    padding: 6px;
+    font-size: 28px;
+}
+.dash{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.select{
+    padding: 30px;
+}
+.select h2{
+    padding: 12px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.select h2:hover{
+    border-bottom: 1px solid black;
+    
+}
+
+.pfp{
+    display: flex;
+    align-items: center;
+
+}
+.pfp h2{
+    font-size: 22px;
+}
+.name{
+    margin-left: 9px;
+} */
+
+#navbar {
+    background-color: #1787E7;
+    height: 100vh;
+    width: 250px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    color: #fff;
+    padding: 20px;
+    z-index: 99;
+  }
+
+  #profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+ .name p{
+    font-size: 20px;
+ }
+  #navigation {
+   
+    
+   padding-left: 20px;
+    margin-top: 60px;
+  }
+#navigation div{
+    display: flex;
+    flex-direction: column;
+}
+  #navigation a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+
+  #navigation a:hover{
+border-bottom: 1px solid white;
+  }
+
+  .resultpg{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    padding-left: 250px;
+    padding: 50px;
+    
+  }
+  td{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
+  th{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
+  
+.card{
+    margin: 30px;
+}
+#cards{
+    width: 100%;
+}
+.head{
+  height: 100vh;
+  width: 100%;
+  background-color: #1787E7;
+
+  
+}
+.head>p{
+  position: relative;
+  top: 85px;
+  left: 50px;
+}
+.head> h2{
+  padding-top: 35px;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+.profile{
+  position: relative;
+  top: 18%;
+ 
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.about{
+  background-color: white;
+  width: 25%;
+  /* height: 38vh; */
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+ 
+}
+
+.pfname{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pfname h2{
+  margin-top: 10px;
+}
+.about p{
+  line-height: 2rem;
+
+}
+.infomain{
+  
+  width: 40%;
+  right: 100px;
+   
+}
+
+.info{
+  margin-bottom: 60px;
+  background-color: white;
+  /* height: 27vh; */
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.button{
+  border: 1px solid black;
+  width: fit-content;
+  padding: 3px 5px;
+  border-radius: 10px;
+}
+.button:hover{
+  cursor: pointer;
+  background-color: #1787E7;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SignUp</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login_box">
+    
+          <div class="logo"><img src="Manit Logo color_0.jpg" alt=""></div>
+          <h1>Welcome to Student Portal</h1>
+          <h3>Create a new account</h3>
+          <div class="input_box">
+            <input type="text" required="">
+            <label for="">Full Name</label>
+            
+          </div>
+          <div class="input_box">
+            <input  id="scholar" type="text" required="">
+            <label for="">Scholar Number</label>
+            
+          </div>
+          <div class="input_box">
+            <input  id="email" type="text" required="">
+            <label for="">Email Id</label>
+            
+          </div>
+          <div class="input_box">
+            <input id="password" type="password" required="">
+            <label for="">Password</label>
+            
+          </div>
+          <div class="rem">
+            <input id="chack" type="checkbox">
+            <label for="chack">Remember me</label>
+            
+          </div>
+          <div class="login">
+            <button id="register">Register Now </button>
+          </div>
+          <div>
+            <div class="reg">
+              <p>Already have an account?</p>
+              <a href="index.html">Sign In!</a>
+            </div>
+          </div>
+        </div>
+       </div>
+</body>
+
+<script type="module" >// Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+   
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+     apiKey: "AIzaSyCaMMT8HIAYwCALhn-n6DVTYClugoQr_Do",
+     authDomain: "signup-65a41.firebaseapp.com",
+     projectId: "signup-65a41",
+     storageBucket: "signup-65a41.appspot.com",
+     messagingSenderId: "253413406390",
+     appId: "1:253413406390:web:690840cd77cea2f15e5817",
+     measurementId: "G-23SK75FZQR"
+    };
+   
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+   
+    
+   
+    //----- New Registration code start	  
+    document.getElementById("register").addEventListener("click", function() {
+      var email =  document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      //For new registration
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        alert("Registration successfully!!");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        console.log(errorMessage);
+        alert(error);
+      });		  		  
+    });
+    //----- End
+   
+    //----- Login code start	  
+    document.getElementById("login").addEventListener("click", function() {
+      var email =  document.getElementById("loginemail").value;
+      var password = document.getElementById("loginpass").value;
+   
+      signInWithEmailAndPassword(auth, scholar, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        alert(user.scholar+" Login successfully!!!");
+        document.getElementById('logout').style.display = 'block';
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorMessage);
+      });		  		  
+    });
+    //----- End
+   
+    //----- Logout code start	  
+    document.getElementById("logout").addEventListener("click", function() {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('Sign-out successful.');
+        alert('Sign-out successful.');
+        document.getElementById('logout').style.display = 'none';
+      }).catch((error) => {
+        // An error happened.
+        console.log('An error happened.');
+      });		  		  
+    });
+    //----- End</script>
+</html>
